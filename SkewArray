@@ -3,8 +3,7 @@
 ##indicating the position where the defined region of DNA with greatest no. of C lies (and so potentially the Ori) . 
 
 def MinimumSkew(Genome):
-    positions = [] # output variable
-    # your code here
+    positions = [] 
     array = SkewArray(Genome)
     min_value = min(array)
     for i in range(len(array)):
