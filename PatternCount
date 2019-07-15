@@ -1,0 +1,9 @@
+## PatternCount searches for a particular string within a larger string, and returns the number of occurences. 
+# If integrated into a for loop, it will look for that string within a repeating window moving through a yet larger string.
+def PatternCount(symbol, ExtendedGenome):
+    
+    count = 0
+    for i in range(len(ExtendedGenome)-len(symbol)+1):
+        if ExtendedGenome[i:i+len(symbol)] == symbol:
+            count = count+1
+    return count 
