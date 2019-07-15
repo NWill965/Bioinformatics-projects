@@ -1,0 +1,27 @@
+# Skewarray looks for C and G bases in a string, then computes how many C vs G bases there are. 
+##MinimumSkew finds the postion where this number is smallest, 
+##indicating the position where the defined region of DNA with greatest no. of C lies (and so potentially the Ori) . 
+
+def MinimumSkew(Genome):
+    positions = [] # output variable
+    # your code here
+    array = SkewArray(Genome)
+    min_value = min(array)
+    for i in range(len(array)):
+        if array[i] == min_value:
+            positions.append(i)
+        
+    return positions
+
+def SkewArray(Genome):
+    Skew=[0] 
+    n = len(Genome)
+    for i in range(n):
+        if Genome[i] == "C":
+            Skew.append(Skew[i]-1)
+        elif Genome[i] == "G":
+            Skew.append(Skew[i]+1)
+        else:
+            Skew.append(Skew[i])
+
+    return Skew
