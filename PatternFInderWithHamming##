@@ -1,0 +1,25 @@
+##This function outputs the number of patterns in a string, along with the numbers of patterns with a defined number of differences (d),computed by the HammingDistance funciton##
+
+def ApproximatePatternMatching(Text, Pattern, d):
+    positions = [] # initializing list of positions
+    for i in range(len(Text) - len(Pattern)+1):
+        if HammingDistance( Text[i:i+len(Pattern)], Pattern) <= d:
+            positions.append(i)
+    return positions
+
+
+
+
+def HammingDistance(p, q):
+    Distance = 0
+    String1 = p
+    String2 = q
+    
+    for i in range(len(String1)):
+        if String1[i] == String2 [i]:
+            Distance +=0
+            
+        else:
+            Distance +=1
+            
+    return Distance 
